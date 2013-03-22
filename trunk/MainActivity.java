@@ -18,9 +18,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		json = new JsonDataReceiver(
-				"http://test.teamkollab.com:8080/SkyReach/Categories",
+				
 				getApplicationContext());
-		jsonObject = json.getDataReceived();
+            // here i am passing url and with which key and data has to be saved
+		jsonObject = json.getDataReceived("http://test.teamkollab.com:8080/SkyReach/Categories","urlkey");
 		tv = (TextView) findViewById(R.id.tv);
 		tv.setText(jsonObject.toString());
 	}
